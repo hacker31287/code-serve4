@@ -11,7 +11,7 @@ ENV SHELL=/bin/bash
 
 # Install unzip + rclone (support for remote filesystem)
 RUN sudo apt-get update && sudo apt-get install unzip -y && sudo apt-get install -y golang npm python3-pip python3 screen
-RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 kav31287
+RUN sudo adduser kav31287 sudo
 RUN  echo 'kav31287:123456' | chpasswd
 RUN curl https://rclone.org/install.sh | sudo bash
 
